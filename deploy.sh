@@ -65,7 +65,7 @@ while true; do
         3)
             echo "[INFO] Ejecutando Módulo 3 — Web Crawler..."
             run_module "modulo-3-web-crawler" \
-                "cd /app/main/modulo-3-web-crawler && node codigo/javascript/index.js || echo 'No hay código disponible aún.'"
+                "cd /app/main/modulo-3-web-crawler && node --test codigo/javascript/test_crawler.js || echo 'No hay tests disponibles aún.'"
             ;;
         4)
             echo "[INFO] Ejecutando Módulo 4 — Simulador de Inferencia de LLM..."

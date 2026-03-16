@@ -59,7 +59,7 @@ if "%opcion%"=="2" (
 )
 if "%opcion%"=="3" (
     echo [INFO] Ejecutando Módulo 3 — Web Crawler...
-    docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-3-web-crawler && node codigo/javascript/index.js || echo 'No hay código disponible aún.'"
+    docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-3-web-crawler && node --test codigo/javascript/test_crawler.js || echo 'No hay tests disponibles aún.'"
     goto menu
 )
 if "%opcion%"=="4" (
