@@ -18,6 +18,8 @@ práctico que cubre un tema clave.
   - `main/modulo-3-web-crawler/`
   - `main/modulo-4-llm-inference/`
   - `main/modulo-5-sampling-profiler/`
+  - `main/modulo-6-hyprland-ricing/`
+  - `main/modulo-7-cli-terminal-playground/`
 
 ### Separación por lenguaje
 
@@ -37,6 +39,11 @@ práctico que cubre un tema clave.
   - **Tutorial básico:** Fundamentos del lenguaje en `main/lenguajes/{lenguaje}/tutorial-basico/`
   - **Tutorial aplicado:** Uso del lenguaje aplicado al contexto del proyecto en
     `main/lenguajes/{lenguaje}/tutorial-aplicado/`
+
+### Mapas mentales de aprendizaje
+
+- Cada módulo debe incluir un archivo `mapa-mental.md` con un mapa conceptual en texto
+  que muestre: prerequisitos, conceptos clave, camino de aprendizaje y siguientes pasos.
 
 ### Archivos en la raíz del repositorio
 
@@ -58,9 +65,12 @@ No se deben crear carpetas adicionales en la raíz sin justificación.
 
 | Tecnología            | Versión / Estándar | Alternativa Moderna          | Notas                                           |
 | --------------------- | ------------------ | ---------------------------- | ----------------------------------------------- |
-| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2 y 4        |
+| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4 y 7     |
 | **Node.js**           | 18+                | Deno o Bun                   | Usado en módulo 3 (Web Crawler)                 |
 | **C**                 | C17                | Rust (seguridad de memoria)  | Usado en módulo 5 (Sampling Profiler)           |
+| **C++**               | C++17              | Rust                         | Usado en módulo 6 (Hyprland Plugins, 9-slice)   |
+| **Bash/Shell**        | Bash 5+            | Nushell, Fish                | Usado en módulo 6 (IPC) y módulo 7 (scripts)    |
+| **QML**               | Qt 6               | GTK4 + Blueprint             | Usado en módulo 6 (Quickshell widgets)           |
 | **Docker**            | —                  | —                            | Containerización del entorno de desarrollo       |
 | **pytest**            | —                  | —                            | Framework de testing para Python                 |
 | **Jest / Node test runner** | —            | Vitest                       | Framework de testing para JavaScript             |

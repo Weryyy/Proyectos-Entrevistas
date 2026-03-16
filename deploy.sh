@@ -34,7 +34,9 @@ show_menu() {
     echo "  3) Módulo 3 — El Rastreador Cortés (Web Crawler)"
     echo "  4) Módulo 4 — Simulador de Inferencia de LLM"
     echo "  5) Módulo 5 — El Detective de Código (Sampling Profiler)"
-    echo "  6) Ejecutar TODAS las pruebas"
+    echo "  6) Módulo 6 — El Artesano del Escritorio (Hyprland Ricing)"
+    echo "  7) Módulo 7 — The Terminal Playground (CLI Tools)"
+    echo "  8) Ejecutar TODAS las pruebas"
     echo "  0) Salir"
     echo "============================================================"
 }
@@ -78,6 +80,16 @@ while true; do
                 "cd /app/main/modulo-5-sampling-profiler && if [ -f codigo/c/Makefile ]; then make -C codigo/c/ run; else echo 'No hay código disponible aún.'; fi"
             ;;
         6)
+            echo "[INFO] Ejecutando Módulo 6 — Hyprland Ricing (tests)..."
+            run_module "modulo-6-hyprland-ricing" \
+                "cd /app/main/modulo-6-hyprland-ricing && pytest codigo/python/ codigo/qml/ -v || echo 'No hay tests disponibles aún.'; if [ -f codigo/cpp/Makefile ]; then make -C codigo/cpp/ test; fi"
+            ;;
+        7)
+            echo "[INFO] Ejecutando Módulo 7 — Terminal Playground..."
+            run_module "modulo-7-cli-terminal-playground" \
+                "cd /app/main/modulo-7-cli-terminal-playground && pytest codigo/python/test_cli_tools.py -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        8)
             echo "[INFO] Ejecutando TODAS las pruebas..."
             run_module "all" \
                 "cd /app && python -m pytest main/ -v --ignore=main/lenguajes; echo '--- Pruebas finalizadas ---'"

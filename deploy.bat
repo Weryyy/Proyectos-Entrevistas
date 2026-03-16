@@ -41,7 +41,9 @@ echo   2) Módulo 2 — Orquestador de Misiones (DAG ^& Task Manager)
 echo   3) Módulo 3 — El Rastreador Cortés (Web Crawler)
 echo   4) Módulo 4 — Simulador de Inferencia de LLM
 echo   5) Módulo 5 — El Detective de Código (Sampling Profiler)
-echo   6) Ejecutar TODAS las pruebas
+echo   6) Módulo 6 — El Artesano del Escritorio (Hyprland Ricing)
+echo   7) Módulo 7 — The Terminal Playground (CLI Tools)
+echo   8) Ejecutar TODAS las pruebas
 echo   0) Salir
 echo ============================================================
 set /p opcion="Tu elección: "
@@ -73,6 +75,16 @@ if "%opcion%"=="5" (
     goto menu
 )
 if "%opcion%"=="6" (
+    echo [INFO] Ejecutando Módulo 6 — Hyprland Ricing...
+    docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-6-hyprland-ricing && pytest codigo/python/ codigo/qml/ -v || echo 'No hay tests disponibles aún.'; if [ -f codigo/cpp/Makefile ]; then make -C codigo/cpp/ test; fi"
+    goto menu
+)
+if "%opcion%"=="7" (
+    echo [INFO] Ejecutando Módulo 7 — Terminal Playground...
+    docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-7-cli-terminal-playground && pytest codigo/python/test_cli_tools.py -v || echo 'No hay tests disponibles aún.'"
+    goto menu
+)
+if "%opcion%"=="8" (
     echo [INFO] Ejecutando TODAS las pruebas...
     docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app && python -m pytest main/ -v --ignore=main/lenguajes; echo '--- Pruebas finalizadas ---'"
     goto menu

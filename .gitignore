@@ -15,12 +15,21 @@ node_modules/
 npm-debug.log*
 package-lock.json
 
-# C
+# C / C++
 *.o
 *.out
 *.exe
 *.so
 *.dylib
+test_profiler
+profiler
+nine_slice
+test_nine_slice
+trace_output.json
+test_trace_output.json
+
+# pytest
+.pytest_cache/
 
 # IDE
 .vscode/
