@@ -1,0 +1,24 @@
+{
+  "frases": [
+    {"texto": "Talk is cheap. Show me the code.", "autor": "Linus Torvalds"},
+    {"texto": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "autor": "Martin Fowler"},
+    {"texto": "First, solve the problem. Then, write the code.", "autor": "John Johnson"},
+    {"texto": "The best error message is the one that never shows up.", "autor": "Thomas Fuchs"},
+    {"texto": "Code is like humor. When you have to explain it, it's bad.", "autor": "Cory House"},
+    {"texto": "Simplicity is the soul of efficiency.", "autor": "Austin Freeman"},
+    {"texto": "Make it work, make it right, make it fast.", "autor": "Kent Beck"},
+    {"texto": "La perfección se alcanza no cuando no hay nada más que añadir, sino cuando no hay nada más que quitar.", "autor": "Antoine de Saint-Exupéry"},
+    {"texto": "Programs must be written for people to read, and only incidentally for machines to execute.", "autor": "Harold Abelson"},
+    {"texto": "The most disastrous thing that you can ever learn is your first programming language.", "autor": "Alan Kay"},
+    {"texto": "El software es como la entropía: difícil de atrapar, no pesa y cumple la segunda ley de la termodinámica; es decir, siempre crece.", "autor": "Norman Augustine"},
+    {"texto": "It's not a bug; it's an undocumented feature.", "autor": "Anónimo"},
+    {"texto": "The only way to learn a new programming language is by writing programs in it.", "autor": "Dennis Ritchie"},
+    {"texto": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.", "autor": "Bill Gates"},
+    {"texto": "Lo hermoso del código es que puedes destruirlo y reconstruirlo desde cero.", "autor": "Yukihiro Matsumoto"},
+    {"texto": "There are only two hard things in Computer Science: cache invalidation and naming things.", "autor": "Phil Karlton"},
+    {"texto": "Any sufficiently advanced technology is indistinguishable from magic.", "autor": "Arthur C. Clarke"},
+    {"texto": "Si depurar es el proceso de eliminar errores, entonces programar debe ser el proceso de ponerlos.", "autor": "Edsger Dijkstra"},
+    {"texto": "Everybody should learn to program a computer, because it teaches you how to think.", "autor": "Steve Jobs"},
+    {"texto": "La tecnología no es nada. Lo importante es que tengas fe en la gente, que sean básicamente buenas e inteligentes, y si les das herramientas, harán cosas maravillosas con ellas.", "autor": "Steve Jobs"}
+  ]
+}

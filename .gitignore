@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+*.egg
+
+# Node.js
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# C / C++
+*.o
+*.out
+*.exe
+*.so
+*.dylib
+test_profiler
+profiler
+nine_slice
+test_nine_slice
+trace_output.json
+test_trace_output.json
+
+# pytest
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker/tmp/
+
+# Misc
+*.log
+tmp/

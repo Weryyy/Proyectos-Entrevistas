@@ -1,0 +1,12 @@
+{
+  "name": "web-crawler-anthropic-gauntlet",
+  "version": "1.0.0",
+  "description": "Módulo 3: El Rastreador Cortés - Web Crawler con BFS, Visited Set y Semáforo",
+  "main": "crawler.js",
+  "scripts": {
+    "start": "node crawler.js",
+    "test": "node --test test_crawler.js"
+  },
+  "keywords": ["crawler", "bfs", "semaphore", "rate-limiting"],
+  "license": "MIT"
+}
