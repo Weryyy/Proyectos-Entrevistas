@@ -13,13 +13,19 @@ entrevistas de empresas de tecnología de primer nivel.
 
 | #   | Módulo                                            | Concepto                  | Lenguaje             |
 | --- | ------------------------------------------------- | ------------------------- | -------------------- |
-| 1   | **El Corazón del Rendimiento** (LRU Cache)        | Estructuras de datos      | Python               |
-| 2   | **Orquestador de Misiones** (DAG & Task Manager)  | Grafos y planificación    | Python               |
-| 3   | **El Rastreador Cortés** (Web Crawler)             | Concurrencia y redes      | JavaScript (Node.js) |
-| 4   | **Simulador de Inferencia de LLM**                | Sistemas y optimización   | Python               |
-| 5   | **El Detective de Código** (Sampling Profiler)     | Sistemas de bajo nivel    | C                    |
-| 6   | **El Artesano del Escritorio** (Hyprland Ricing)   | Linux, Wayland, plugins   | C++ / Bash / QML / Python |
+| 1   | **El Corazón del Rendimiento** (LRU Cache)        | Estructuras de datos       | Python               |
+| 2   | **Orquestador de Misiones** (DAG & Task Manager)  | Grafos y planificación     | Python               |
+| 3   | **El Rastreador Cortés** (Web Crawler)             | Concurrencia y redes       | JavaScript (Node.js) |
+| 4   | **Simulador de Inferencia de LLM**                | Sistemas y optimización    | Python               |
+| 5   | **El Detective de Código** (Sampling Profiler)     | Sistemas de bajo nivel     | C                    |
+| 6   | **El Artesano del Escritorio** (Hyprland Ricing)   | Linux, Wayland, plugins    | C++ / Bash / QML / Python |
 | 7   | **The Terminal Playground** (CLI Tools)             | Piping, streams, animación | Python               |
+| 8   | **El Guardián de Tráfico** (Rate Limiter)          | Algoritmos de control      | Python               |
+| 9   | **El Explorador de Mundos** (Reinforcement Learning) | IA y aprendizaje automático | Python             |
+| 10  | **El Constructor de Lenguajes** (Mini Compilador)  | Compiladores e intérpretes | Python               |
+| 11  | **El Motor de Búsqueda Semántica** (Vector Search) | Búsqueda vectorial y IA    | Python               |
+| 12  | **Servidor HTTP Concurrente**                      | Sockets y concurrencia     | C                    |
+| 13  | **El Laboratorio Virtual** (Proxmox & Homelab)     | Virtualización y automatización | Python / Bash   |
 
 ### 📌 Videos de Inspiración
 
@@ -28,6 +34,7 @@ entrevistas de empresas de tecnología de primer nivel.
   ([Repo Rivendell](https://codeberg.org/zacoons/rivendell-hyprdots))
 - [The Art of Linux CLIs](https://www.youtube.com/watch?v=KdoaiGTIBY4) — Módulo 7
 - [Experiencia completa con Arch Linux](https://www.youtube.com/watch?v=uZDPXFQYz0Q) — Módulo 7
+- [Ardens — Proxmox Homelab Series](https://www.youtube.com/@ardens_dev) — Módulo 13
 
 ### 🗺️ Mapas Mentales
 

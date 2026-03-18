@@ -20,6 +20,12 @@ práctico que cubre un tema clave.
   - `main/modulo-5-sampling-profiler/`
   - `main/modulo-6-hyprland-ricing/`
   - `main/modulo-7-cli-terminal-playground/`
+  - `main/modulo-8-rate-limiter/`
+  - `main/modulo-9-reinforcement-learning/`
+  - `main/modulo-10-mini-compilador/`
+  - `main/modulo-11-vector-search/`
+  - `main/modulo-12-http-server-concurrente/`
+  - `main/modulo-13-proxmox-homelab/`
 
 ### Separación por lenguaje
 
@@ -65,11 +71,11 @@ No se deben crear carpetas adicionales en la raíz sin justificación.
 
 | Tecnología            | Versión / Estándar | Alternativa Moderna          | Notas                                           |
 | --------------------- | ------------------ | ---------------------------- | ----------------------------------------------- |
-| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4 y 7     |
+| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4, 7, 8, 9, 10, 11 y 13 |
 | **Node.js**           | 18+                | Deno o Bun                   | Usado en módulo 3 (Web Crawler)                 |
-| **C**                 | C17                | Rust (seguridad de memoria)  | Usado en módulo 5 (Sampling Profiler)           |
+| **C**                 | C17                | Rust (seguridad de memoria)  | Usado en módulos 5 (Sampling Profiler) y 12 (HTTP Server) |
 | **C++**               | C++17              | Rust                         | Usado en módulo 6 (Hyprland Plugins, 9-slice)   |
-| **Bash/Shell**        | Bash 5+            | Nushell, Fish                | Usado en módulo 6 (IPC) y módulo 7 (scripts)    |
+| **Bash/Shell**        | Bash 5+            | Nushell, Fish                | Usado en módulos 6 (IPC), 7 (scripts) y 13 (Homelab) |
 | **QML**               | Qt 6               | GTK4 + Blueprint             | Usado en módulo 6 (Quickshell widgets)           |
 | **Docker**            | —                  | —                            | Containerización del entorno de desarrollo       |
 | **pytest**            | —                  | —                            | Framework de testing para Python                 |

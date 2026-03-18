@@ -36,7 +36,13 @@ show_menu() {
     echo "  5) Módulo 5 — El Detective de Código (Sampling Profiler)"
     echo "  6) Módulo 6 — El Artesano del Escritorio (Hyprland Ricing)"
     echo "  7) Módulo 7 — The Terminal Playground (CLI Tools)"
-    echo "  8) Ejecutar TODAS las pruebas"
+    echo "  8) Módulo 8 — El Guardián de Tráfico (Rate Limiter)"
+    echo "  9) Módulo 9 — El Explorador de Mundos (Reinforcement Learning)"
+    echo " 10) Módulo 10 — El Constructor de Lenguajes (Mini Compilador)"
+    echo " 11) Módulo 11 — El Motor de Búsqueda Semántica (Vector Search)"
+    echo " 12) Módulo 12 — Servidor HTTP Concurrente (C + pthreads)"
+    echo " 13) Módulo 13 — El Laboratorio Virtual (Proxmox & Homelab)"
+    echo " 99) Ejecutar TODAS las pruebas"
     echo "  0) Salir"
     echo "============================================================"
 }
@@ -90,6 +96,36 @@ while true; do
                 "cd /app/main/modulo-7-cli-terminal-playground && pytest codigo/python/test_cli_tools.py -v || echo 'No hay tests disponibles aún.'"
             ;;
         8)
+            echo "[INFO] Ejecutando Módulo 8 — Rate Limiter..."
+            run_module "modulo-8-rate-limiter" \
+                "cd /app/main/modulo-8-rate-limiter && pytest codigo/python/ -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        9)
+            echo "[INFO] Ejecutando Módulo 9 — Reinforcement Learning..."
+            run_module "modulo-9-reinforcement-learning" \
+                "cd /app/main/modulo-9-reinforcement-learning && pytest codigo/python/ -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        10)
+            echo "[INFO] Ejecutando Módulo 10 — Mini Compilador..."
+            run_module "modulo-10-mini-compilador" \
+                "cd /app/main/modulo-10-mini-compilador && pytest codigo/python/ -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        11)
+            echo "[INFO] Ejecutando Módulo 11 — Vector Search..."
+            run_module "modulo-11-vector-search" \
+                "cd /app/main/modulo-11-vector-search && pytest codigo/python/ -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        12)
+            echo "[INFO] Ejecutando Módulo 12 — Servidor HTTP Concurrente..."
+            run_module "modulo-12-http-server-concurrente" \
+                "cd /app/main/modulo-12-http-server-concurrente/codigo/c && if [ -f Makefile ]; then make test; else echo 'No hay código disponible aún.'; fi"
+            ;;
+        13)
+            echo "[INFO] Ejecutando Módulo 13 — Proxmox & Homelab (tests)..."
+            run_module "modulo-13-proxmox-homelab" \
+                "cd /app/main/modulo-13-proxmox-homelab && pytest codigo/python/test_proxmox.py -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        99)
             echo "[INFO] Ejecutando TODAS las pruebas..."
             run_module "all" \
                 "cd /app && python -m pytest main/ -v --ignore=main/lenguajes; echo '--- Pruebas finalizadas ---'"
