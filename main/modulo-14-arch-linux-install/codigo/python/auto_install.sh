@@ -71,4 +71,7 @@ echo "#   INSTALACIÓN COMPLETADA CON ÉXITO                #"
 echo "#####################################################"
 echo "Usuario: root"
 echo "Password: arch123"
-echo "Comando final: umount -R /mnt && reboot"
+echo "El sistema se reiniciará automáticamente en 5 segundos..."
+sleep 5
+umount -R /mnt
+reboot

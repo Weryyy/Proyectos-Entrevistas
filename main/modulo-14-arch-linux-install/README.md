@@ -40,7 +40,8 @@ modulo-14-arch-linux-install/
         ├── iso_downloader.py       # Módulo: descarga y verificación de ISO
         ├── vbox_setup.py           # Módulo: generación de scripts VirtualBox
         ├── test_arch_install.py    # Tests unitarios (30 tests, sin dependencias)
-        └── auto_install.sh         # Script de autoinstalación para ejecutar en la VM
+        ├── auto_install.sh         # Script de servidor basico (sin interfaz)
+        └── auto_install_hyprland.sh # Script potente con interfaz visual (Wayland)
 ```
 
 ---
@@ -117,7 +118,21 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### Usar la configuración de archinstall
+### Automatización total para equipos reales (y máquinas virtuales)
+
+Si vas a instalar esto en un sistema y no quieres tener que teclear nada, Arch Linux permite pasarle instrucciones directas desde su menú de inicio usando el parámetro `script=`.
+
+1. En la pantalla donde te pide instalar Arch (la pantalla negra inicial con letras blancas).
+2. Justo antes de que acabe la cuenta atrás, pulsa **`Tab`** (si estás en BIOS) o **`e`** (si estás en UEFI).
+3. Escribe al final de la línea lo siguiente (dependiendo de si quieres modo terminal o con interfaz Hyprland):
+
+**Para el servidor básico:**
+`script=https://raw.githubusercontent.com/TuUsuario/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install.sh`
+
+**Para escritorio interactivo (Hyprland):**
+`script=https://raw.githubusercontent.com/TuUsuario/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install_hyprland.sh`
+
+4. Pulsa **Enter**. El sistema arrancará, se conectará a internet, bajará el archivo y te instalará absolutamente todo hasta dejarte en la pantalla de inicio (login). No necesitas interactuar con él en ningún momento.
 
 Una vez dentro de la VM arrancada con la ISO:
 
