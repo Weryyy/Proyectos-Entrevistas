@@ -7,9 +7,11 @@ import os
 PORT = 8080
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
+
 
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -22,6 +24,7 @@ def get_ip():
     finally:
         s.close()
     return IP
+
 
 print(f"--- Servidor de Despliegue Local (Módulo 14) ---")
 print(f"IP de este equipo: {get_ip()}")
