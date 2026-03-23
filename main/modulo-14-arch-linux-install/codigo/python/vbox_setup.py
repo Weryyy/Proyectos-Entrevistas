@@ -43,8 +43,10 @@ def generar_script_vbox(config: ConfigVM) -> str:
     Returns:
         Contenido del script de shell (bash) como string.
     """
-    iso_abs = str(config.iso_path.resolve()) if config.iso_path != Path() else "/ruta/al/archlinux.iso"
-    vm_dir = str(config.directorio_vm.resolve()) if config.directorio_vm != Path() else "$HOME/VirtualBox VMs"
+    iso_abs = str(config.iso_path.resolve()
+                  ) if config.iso_path != Path() else "/ruta/al/archlinux.iso"
+    vm_dir = str(config.directorio_vm.resolve()
+                 ) if config.directorio_vm != Path() else "$HOME/VirtualBox VMs"
     disco_path = f"{vm_dir}/{config.nombre}/{config.nombre}.vdi"
 
     firmware_flag = "--firmware efi" if config.tipo_firmware == "EFI" else "--firmware bios"
@@ -152,7 +154,8 @@ def generar_config_archinstall(config_vm: ConfigVM, config_arch: dict) -> str:
     """
     import json
 
-    hostname = config_arch.get("hostname", config_vm.nombre.lower().replace(" ", "-"))
+    hostname = config_arch.get(
+        "hostname", config_vm.nombre.lower().replace(" ", "-"))
     config = {
         "additional-repositories": [],
         "audio": "pipewire" if config_arch.get("perfil") == "desktop" else None,
@@ -182,7 +185,8 @@ def generar_config_archinstall(config_vm: ConfigVM, config_arch: dict) -> str:
         "no_pkg_lookups": False,
         "ntp": True,
         "packages": [],
-        "parallel downloads": 1,  # Clave con espacio: formato requerido por el esquema de archinstall
+        # Clave con espacio: formato requerido por el esquema de archinstall
+        "parallel downloads": 1,
         "profile_config": {
             "main_profile": config_arch.get("perfil", "minimal"),
             "sub_profiles": [],
