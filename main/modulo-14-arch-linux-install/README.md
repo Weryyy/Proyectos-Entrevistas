@@ -39,7 +39,8 @@ modulo-14-arch-linux-install/
         ├── arch_install.py         # Asistente interactivo principal
         ├── iso_downloader.py       # Módulo: descarga y verificación de ISO
         ├── vbox_setup.py           # Módulo: generación de scripts VirtualBox
-        └── test_arch_install.py    # Tests unitarios (30 tests, sin dependencias)
+        ├── test_arch_install.py    # Tests unitarios (30 tests, sin dependencias)
+        └── auto_install.sh         # Script de autoinstalación para ejecutar en la VM
 ```
 
 ---
@@ -100,6 +101,20 @@ bash ~/arch-install/crear_vm_vbox.sh
 
 # Iniciar la VM
 VBoxManage startvm "ArchLinux" --type gui
+```
+
+### Script de Autoinstalación (DENTRO de la VM)
+
+Para automatizar la instalación real una vez arrancada la VM de Arch Linux (puedes descargarlo con `curl` tras hacer `push` de este repositorio):
+
+```bash
+# 1. Asegúrate de tener Internet en la VM (ping google.com)
+# 2. Descarga el script (sustituye 'TuUsuario' por el tuyo en GitHub)
+curl -L https://raw.githubusercontent.com/TuUsuario/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install.sh > install.sh
+
+# 3. Hazlo ejecutable y lánzalo
+chmod +x install.sh
+./install.sh
 ```
 
 ### Usar la configuración de archinstall
