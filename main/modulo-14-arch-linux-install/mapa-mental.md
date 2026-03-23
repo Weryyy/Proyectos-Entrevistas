@@ -48,6 +48,21 @@ ARCH LINUX INSTALL (Automatización)
 │   ├── 4. Analizar los archivos generados (script VBox, config archinstall)
 │   ├── 5. Crear la VM con el script generado
 │   ├── 6. Arrancar la VM con la ISO y seguir los pasos documentados
+│   └── 7. Dominar el "Nivel Dios": Despliegue remoto iPXE y Cloud
+
+├── 🥇 NIVELES DE DESPLIEGUE (AVANZADO)
+│   ├── 🥉 Nivel 1: Local
+│   │   ├── Servidor Python local: server_local.py
+│   │   └── Ventaja: Desarrollo rápido en entorno aislado
+│   │
+│   ├── 🥈 Nivel 2: Cloud (GitHub)
+│   │   ├── URL Raw: raw.githubusercontent.com
+│   │   └── Ventaja: Portabilidad global (Zero-Touch)
+│   │
+│   └── 🥇 Nivel 3: Nivel Dios (iPXE / Netboot)
+│       ├── Script de arranque: boot.ipxe
+│       ├── Kernel a RAM: vmlinuz-linux + initrd
+│       └── Ventaja: Despliegue masivo en data centers
 │   ├── 7. Instalar Arch usando archinstall (modo guiado)
 │   └── 8. Explorar instalación manual para entender cada paso
 │

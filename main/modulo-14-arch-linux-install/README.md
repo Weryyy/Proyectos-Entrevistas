@@ -4,27 +4,40 @@
 
 **Arch Linux** es una distribución Linux minimalista y de lanzamiento continuo (*rolling release*)
 que sigue una filosofía de configuración manual total: el usuario construye su sistema desde cero
-eligiendo cada componente. Este módulo automatiza ese proceso creando un **asistente interactivo**
-en Python que:
+eligiendo cada componente. Este módulo automatiza ese proceso mediante **tres niveles de despliegue**:
 
-1. Descarga la **ISO oficial** de Arch Linux verificando su integridad (SHA256).
-2. Genera un **script de VirtualBox** (`VBoxManage`) listo para ejecutar.
-3. Genera una **configuración JSON** para `archinstall` (el instalador oficial de Arch).
-4. Documenta todos los **pasos de instalación** de la guía oficial.
-
-Inspirado en:
-- [Guía de Instalación Oficial](https://wiki.archlinux.org/title/Installation_guide)
-- [Descargas HTTP de Arch Linux](https://archlinux.org/download/#http-downloads)
+1.  **Nivel Básico (Local)**: Instalación manual asistida por scripts locales.
+2.  **Nivel Cloud (GitHub)**: Despliegue automático "Zero-Touch" usando la nube.
+3.  **Nivel Dios (iPXE/Netboot)**: Arranque y despliegue directo desde red sin medios físicos (ISO/USB).
 
 ---
 
-## 🎯 Objetivos
+## 🎯 Niveles de Despliegue (Elite Dev)
 
-1. Entender el proceso completo de instalación de Arch Linux paso a paso.
-2. Aprender a descargar y verificar imágenes ISO con Python (sin dependencias externas).
-3. Automatizar la creación de VMs con `VBoxManage` desde línea de comandos.
-4. Usar `archinstall` (el instalador oficial en Python) con configuración JSON.
-5. Practicar diseño de CLIs interactivos en Python.
+Para impresionar en una entrevista técnica, este módulo ofrece tres formas de instalar el sistema:
+
+### 🥉 Nivel 1: Despliegue Local (PC a VM)
+Ideal para redes cerradas. Lanzas un servidor web en tu PC y la VM descarga el script directamente.
+```powershell
+# En tu PC (carpeta del script)
+python -m http.server 8080
+
+# En la VM Arch (Live)
+curl 192.168.1.XX:8080/auto_install_hyprland.sh | bash
+```
+
+### 🥈 Nivel 2: Despliegue Cloud (GitHub Raw)
+El estándar de la industria. El script reside en tu repositorio y se descarga en cualquier parte del mundo.
+```bash
+# En cualquier máquina con Arch Live
+curl -L https://tinyurl.com/arch-weryyy-raw | bash
+```
+*Nota: Apunta a `raw.githubusercontent.com` para evitar descargar código HTML.*
+
+### 🥇 Nivel 3: El Nivel "Dios" (iPXE / Netboot)
+Despliegue de infraestructura a gran escala. El ordenador arranca por red (PXE), descarga el kernel de los servidores oficiales de Arch y ejecuta tu script de autoinstalación sin intervención humana.
+- **Archivo**: `codigo/python/boot.ipxe`
+- **Ventaja**: No necesitas quemar ISOs ni pendrives. Ideal para data centers.
 
 ---
 
@@ -37,18 +50,30 @@ modulo-14-arch-linux-install/
 └── codigo/
     └── python/
         ├── arch_install.py         # Asistente interactivo principal
-        ├── iso_downloader.py       # Módulo: descarga y verificación de ISO
+        ├── auto_install_hyprland.sh # Script potente con entorno gráfico (Hyprland)
+        ├── boot.ipxe               # Script de arranque por red (Nivel Dios)
         ├── vbox_setup.py           # Módulo: generación de scripts VirtualBox
-        ├── test_arch_install.py    # Tests unitarios (30 tests, sin dependencias)
-        ├── auto_install.sh         # Script de servidor basico (sin interfaz)
-        └── auto_install_hyprland.sh # Script potente con interfaz visual (Wayland)
+        └── ...
 ```
 
 ---
 
-## 🚀 Ejecución
+## 🚀 Instalación Automática (Hyprland + Wayland)
 
-### Asistente interactivo completo
+El script `auto_install_hyprland.sh` realiza las siguientes tareas de forma autónoma:
+1. **Particionado**: Borra `/dev/sda` y crea la estructura base.
+2. **Entorno Gráfico**: Instala **Hyprland** (Tiling Window Manager moderno) y **Wayland**.
+3. **VM Ready**: Configura drivers de VirtualBox y corrige errores críticos de `XDG_RUNTIME_DIR`.
+4. **Login automático**: Configura **SDDM** para arrancar la sesión visual.
+
+**Credenciales por defecto:**
+- **Usuario**: `usuario`
+- **Contraseña**: `1234`
+- **Comandos**: `SUPER + Q` (Terminal Kitty), `SUPER + M` (Salir).
+
+---
+
+## 🚀 Ejecución del Asistente Interactivo
 
 ```bash
 cd codigo/python
@@ -127,10 +152,10 @@ Si vas a instalar esto en un sistema y no quieres tener que teclear nada, Arch L
 3. Escribe al final de la línea lo siguiente (dependiendo de si quieres modo terminal o con interfaz Hyprland):
 
 **Para el servidor básico:**
-`script=https://raw.githubusercontent.com/TuUsuario/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install.sh`
+`script=https://raw.githubusercontent.com/Weryyy/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install.sh`
 
 **Para escritorio interactivo (Hyprland):**
-`script=https://raw.githubusercontent.com/TuUsuario/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install_hyprland.sh`
+`script=https://raw.githubusercontent.com/Weryyy/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install_hyprland.sh`
 
 4. Pulsa **Enter**. El sistema arrancará, se conectará a internet, bajará el archivo y te instalará absolutamente todo hasta dejarte en la pantalla de inicio (login). No necesitas interactuar con él en ningún momento.
 

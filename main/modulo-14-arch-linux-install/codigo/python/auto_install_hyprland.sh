@@ -65,8 +65,23 @@ echo "usuario:1234" | chpasswd
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Trucos para que Hyprland funcione bien en máquinas virtuales
-echo "WLR_NO_HARDWARE_CURSORS=1" >> /etc/environment
-echo "WLR_RENDERER_ALLOW_SOFTWARE=1" >> /etc/environment
+echo "WLR_NO_HARDWARE_CURSORS=1" >> /mnt/etc/environment
+echo "WLR_RENDERER_ALLOW_SOFTWARE=1" >> /mnt/etc/environment
+echo "XDG_RUNTIME_DIR=/run/user/1000" >> /mnt/etc/environment
+
+# Configurar el perfil del usuario para asegurar el entorno de sesión
+cat <<EOF_USER > /mnt/home/usuario/.bash_profile
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+export XDG_RUNTIME_DIR=/run/user/\$(id -u)
+export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER_ALLOW_SOFTWARE=1
+
+# Si estamos en el TTY1, arrancar Hyprland automáticamente
+if [ -z "\$DISPLAY" ] && [ "\$(tty)" = "/dev/tty1" ]; then
+  exec Hyprland
+fi
+EOF_USER
+chown 1000:1000 /mnt/home/usuario/.bash_profile
 
 # Activación de servicios al arrancar
 systemctl enable NetworkManager

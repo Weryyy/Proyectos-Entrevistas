@@ -1,0 +1,23 @@
+#!ipxe
+
+# -------------------------------------------------------------
+# Módulo 14: Instalación Remota "Nivel Dios" (iPXE)
+# -------------------------------------------------------------
+
+# 1. Definir los espejos oficiales modernos de Arch Linux (v2026.03.01)
+set arch_version 2026.03.01
+set arch_mirror http://mirror.rackspace.com/archlinux/iso/${arch_version}/
+
+# 2. Cargar el Kernel directo de la web oficial a la RAM
+echo "Cargando Kernel de Arch Linux v${arch_version} desde red..."
+kernel ${arch_mirror}arch/boot/x86_64/vmlinuz-linux initrd=initrd.img archisobasedir=arch archisolabel=ARCH_202603 ip=dhcp script=https://raw.githubusercontent.com/Weryyy/Proyectos-Entrevistas/main/main/modulo-14-arch-linux-install/codigo/python/auto_install_hyprland.sh
+
+# 3. Cargar el sistema de archivos inicial
+echo "Cargando InitRAMFS (Esto tardará un poco dependiendo de tu velocidad de red)..."
+initrd ${arch_mirror}arch/boot/intel-ucode.img
+initrd ${arch_mirror}arch/boot/amd-ucode.img
+initrd ${arch_mirror}arch/boot/x86_64/initrd.img
+
+# 4. Magia: Ejecutar!
+echo "Arrancando Arch Linux 'Zero-Touch'..."
+boot

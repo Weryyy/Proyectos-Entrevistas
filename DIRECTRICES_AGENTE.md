@@ -73,10 +73,10 @@ No se deben crear carpetas adicionales en la raíz sin justificación.
 | Tecnología            | Versión / Estándar | Alternativa Moderna          | Notas                                           |
 | --------------------- | ------------------ | ---------------------------- | ----------------------------------------------- |
 | **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4, 7, 8, 9, 10, 11, 13 y 14 |
+| **Bash/Shell**        | Bash 5+            | Nushell, Fish                | Fundamental para automatización Linux (Módulos 6, 13 y 14) |
 | **Node.js**           | 18+                | Deno o Bun                   | Usado en módulo 3 (Web Crawler)                 |
 | **C**                 | C17                | Rust (seguridad de memoria)  | Usado en módulos 5 (Sampling Profiler) y 12 (HTTP Server) |
 | **C++**               | C++17              | Rust                         | Usado en módulo 6 (Hyprland Plugins, 9-slice)   |
-| **Bash/Shell**        | Bash 5+            | Nushell, Fish                | Usado en módulos 6 (IPC), 7 (scripts) y 13 (Homelab) |
 | **QML**               | Qt 6               | GTK4 + Blueprint             | Usado en módulo 6 (Quickshell widgets)           |
 | **Docker**            | —                  | —                            | Containerización del entorno de desarrollo       |
 | **pytest**            | —                  | —                            | Framework de testing para Python                 |
