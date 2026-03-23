@@ -26,6 +26,7 @@ práctico que cubre un tema clave.
   - `main/modulo-11-vector-search/`
   - `main/modulo-12-http-server-concurrente/`
   - `main/modulo-13-proxmox-homelab/`
+  - `main/modulo-14-arch-linux-install/`
 
 ### Separación por lenguaje
 
@@ -71,7 +72,7 @@ No se deben crear carpetas adicionales en la raíz sin justificación.
 
 | Tecnología            | Versión / Estándar | Alternativa Moderna          | Notas                                           |
 | --------------------- | ------------------ | ---------------------------- | ----------------------------------------------- |
-| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4, 7, 8, 9, 10, 11 y 13 |
+| **Python**            | 3.11+              | Python 3.12+ (nuevas features) | Lenguaje principal para módulos 1, 2, 4, 7, 8, 9, 10, 11, 13 y 14 |
 | **Node.js**           | 18+                | Deno o Bun                   | Usado en módulo 3 (Web Crawler)                 |
 | **C**                 | C17                | Rust (seguridad de memoria)  | Usado en módulos 5 (Sampling Profiler) y 12 (HTTP Server) |
 | **C++**               | C++17              | Rust                         | Usado en módulo 6 (Hyprland Plugins, 9-slice)   |

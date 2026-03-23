@@ -49,6 +49,7 @@ echo  10) Módulo 10 — El Constructor de Lenguajes (Mini Compilador)
 echo  11) Módulo 11 — El Motor de Búsqueda Semántica (Vector Search)
 echo  12) Módulo 12 — Servidor HTTP Concurrente (C ^+ pthreads)
 echo  13) Módulo 13 — El Laboratorio Virtual (Proxmox ^& Homelab)
+echo  14) Módulo 14 — El Instalador de Arch (Arch Linux Install)
 echo  99) Ejecutar TODAS las pruebas
 echo   0) Salir
 echo ============================================================
@@ -118,6 +119,11 @@ if "%opcion%"=="12" (
 if "%opcion%"=="13" (
     echo [INFO] Ejecutando Módulo 13 — Proxmox ^& Homelab...
     docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-13-proxmox-homelab && pytest codigo/python/test_proxmox.py -v || echo 'No hay tests disponibles aún.'"
+    goto menu
+)
+if "%opcion%"=="14" (
+    echo [INFO] Ejecutando Módulo 14 — Arch Linux Install...
+    docker run --rm -v "%cd%":/app anthropic-gauntlet bash -c "cd /app/main/modulo-14-arch-linux-install && pytest codigo/python/test_arch_install.py -v || echo 'No hay tests disponibles aún.'"
     goto menu
 )
 if "%opcion%"=="99" (

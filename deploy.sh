@@ -41,7 +41,8 @@ show_menu() {
     echo " 10) Módulo 10 — El Constructor de Lenguajes (Mini Compilador)"
     echo " 11) Módulo 11 — El Motor de Búsqueda Semántica (Vector Search)"
     echo " 12) Módulo 12 — Servidor HTTP Concurrente (C + pthreads)"
-    echo " 13) Módulo 13 — El Laboratorio Virtual (Proxmox & Homelab)"
+    echo " 13) Módulo 13 — El Laboratorio Virtual (Proxmox & Homelab)
+    echo " 14) Módulo 14 — El Instalador de Arch (Arch Linux Install)"
     echo " 99) Ejecutar TODAS las pruebas"
     echo "  0) Salir"
     echo "============================================================"
@@ -124,6 +125,11 @@ while true; do
             echo "[INFO] Ejecutando Módulo 13 — Proxmox & Homelab (tests)..."
             run_module "modulo-13-proxmox-homelab" \
                 "cd /app/main/modulo-13-proxmox-homelab && pytest codigo/python/test_proxmox.py -v || echo 'No hay tests disponibles aún.'"
+            ;;
+        14)
+            echo "[INFO] Ejecutando Módulo 14 — Arch Linux Install (tests)..."
+            run_module "modulo-14-arch-linux-install" \
+                "cd /app/main/modulo-14-arch-linux-install && pytest codigo/python/test_arch_install.py -v || echo 'No hay tests disponibles aún.'"
             ;;
         99)
             echo "[INFO] Ejecutando TODAS las pruebas..."
