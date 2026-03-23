@@ -26,6 +26,7 @@ entrevistas de empresas de tecnología de primer nivel.
 | 11  | **El Motor de Búsqueda Semántica** (Vector Search) | Búsqueda vectorial y IA    | Python               |
 | 12  | **Servidor HTTP Concurrente**                      | Sockets y concurrencia     | C                    |
 | 13  | **El Laboratorio Virtual** (Proxmox & Homelab)     | Virtualización y automatización | Python / Bash   |
+| 14  | **El Instalador de Arch** (Arch Linux Install)     | Automatización de instalación Linux | Python / Bash |
 
 ### 📌 Videos de Inspiración
 
@@ -65,6 +66,9 @@ Proyectos-Entrevistas/
     │   └── codigo/{cpp,shell,qml,python}/
     ├── modulo-7-cli-terminal-playground/
     │   ├── guia-arch-uso/          # Guía uso diario de Arch
+    │   └── codigo/python/
+    ├── modulo-13-proxmox-homelab/
+    ├── modulo-14-arch-linux-install/
     │   └── codigo/python/
     └── lenguajes/
         ├── python/
